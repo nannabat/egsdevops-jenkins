@@ -14,30 +14,17 @@ Create a freestyle job and configure it as follows:
 
 1. Under `Source Code Management`, select `Git` and enter the following URL:
 ```
-https://github.com/nannabat/egsdevops-jenkins.git
+https://github.com/managedkaos/apache-maven-hello-world
 ```
 2. **MAKE SURE TO SET THE `Branch Specifier` to `*/03_01`**.
 3. Add a build step using `Invoke Top-Level Maven Target`.
 4. Select the Maven version you configured in the previous step.
 5. For the goal, enter `package`.
-
-## WINDOWS SYSTEMS
-Select the `Execute Windows batch command` build step
+6. Add a new build step using the `Execute Windows batch command` and enter
 ```
 java -cp target/hello-1.0-SNAPSHOT.jar com.learningjenkins.App
 ```
 Save the job and start the build.
-
-[Follow this link for more details on Windows](WINDOWS.md)
-
-## MacOS, Linux, and Docker
-Select the `Execute shell` build step.
-```
-java -cp target/hello-1.0-SNAPSHOT.jar com.learningjenkins.App
-```
-Save the job and start the build.
-
-[Follow this link for more details on MacOS, Linux, and Docker](MAC_LINUX_DOCKER.md)
 
 ## Troubleshooting Errors
 ```
